@@ -4784,11 +4784,6 @@ viem@^2.13.1:
     isows "1.0.4"
     ws "8.13.0"
 
-wagmi-permit@^1.0.19:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/wagmi-permit/-/wagmi-permit-1.0.19.tgz#4a8ed2a087ca6bbcaf1453641be82577887c75ac"
-  integrity sha512-FNrZkr3b7FnhnkPKlXHR2jidlI39Zv/4jOqv3bK6jnCSGQAeIeXHE1WGS4Ab+zETH4h/LB2qAHTCKRLtsClsag==
-
 wagmi@^2.9.7:
   version "2.9.7"
   resolved "https://registry.yarnpkg.com/wagmi/-/wagmi-2.9.7.tgz#3b1b1cd7865c1cb2da15a4e8c4c1bd36aa881519"
