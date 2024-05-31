@@ -5,17 +5,19 @@ import { WagmiProvider } from "wagmi";
 import { rootstock, rootstockTestnet } from "wagmi/chains";
 import { ReactNode } from "react";
 import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { http } from "wagmi";
 
 const config = getDefaultConfig({
 	appName: "Root Tuber",
 	projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID!,
-	chains: [
-		rootstock,
-		...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true"
-			? [rootstockTestnet]
-			: []),
-	],
+	chains: [rootstock, rootstockTestnet],
 	ssr: true,
+	transports: {
+		[rootstock.id]: http(process.env.NEXT_PUBLIC_ROOTSTOCK_RPC_URL),
+		[rootstockTestnet.id]: http(
+			process.env.NEXT_PUBLIC_ROOTSTOCK_TESTNET_RPC_URL
+		),
+	},
 });
 
 const client = new QueryClient();
