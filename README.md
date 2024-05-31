@@ -7,8 +7,9 @@
 
 ### Short description
 
-Root Tubers are how plants save energy.
-Like Acorns.com (but crypto), Root Tuber lets users save a little bit of money every time they spend onchain.
+Root Tuber helps users save a little bit of money automatically every time they spend onchain, quietly building generational wealth.
+
+PS - [Root Tubers](https://wellfieldgardens.org/2017/10/13/rhizomes-root-tubers-and-stem-tubers-say-what/) are how plants save energy.
 
 ### Full description
 
