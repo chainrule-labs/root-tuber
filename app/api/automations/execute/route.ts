@@ -31,7 +31,7 @@ const executeAutomation = async (automation: IAutomation): Promise<boolean> => {
   }
 
   // multiply by percent savings
-  const amountToSave = diff.times(automation.saving_percent).div(100);
+  const amountToSave = diff.times(automation.saving_percent).div(100).round(0);
 
   // create erc20 transfer with that amount
   await sendErc20Transfer({

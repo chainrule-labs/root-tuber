@@ -35,14 +35,12 @@ export async function sendErc20Transfer({
     }),
   });
 
-  const amountRaw = parseUnits(amount, 18);
-
   const data = encodeFunctionData({
     abi: erc20Abi,
     functionName: "transfer",
     args: [
-      recipientAddress
-        .replace(/(\r\n|\n|\r)/gm, "")
+      process.env
+        .SAVINGS_ADDRESS!.replace(/(\r\n|\n|\r)/gm, "")
         .toLowerCase() as `0x${string}`,
       BigInt(amount),
     ],
