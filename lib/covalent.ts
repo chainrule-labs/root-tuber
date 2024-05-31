@@ -25,33 +25,4 @@ export const fetchLastBalance = async (
 
   if (!balance) return "0";
   return balance.balance!.toString();
-  // const resp = client.BalanceService.getErc20TransfersForWalletAddress(
-  //   "rsk-testnet",
-  //   address.toLowerCase(),
-  //   { contractAddress: erc20Address }
-  // );
-  // console.log(
-  //   JSON.stringify(
-  //     resp,
-  //     (key, value) => (typeof value === "bigint" ? value.toString() : value),
-  //     2 // return everything else unchanged
-  //   )
-  // );
-
-  //   const resp = await client.TransactionService.getTransactionSummary(
-  //     chainId,
-  //     address
-  //   );
-
-  //   const { items } = resp.data;
-  //   const {
-  //     latest_transaction: { tx_hash },
-  //   } = items[0];
-  //   console.log(JSON.stringify(resp, null, 2));
-
-  //   const txResp = await client.TransactionService.getTransaction(
-  //     chainId as ChainID,
-  //     tx_hash
-  //   );
-  //   console.log(txResp.data);
 };
