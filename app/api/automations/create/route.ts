@@ -4,6 +4,7 @@ import {
   IAutomation,
   ICreateAutomationRequest,
 } from "../../../../interfaces/automations";
+import { fetchLastBalance } from "../../../../lib/covalent";
 
 // Create a single supabase client for interacting with your database
 const supabase = createClient<Database>(
@@ -19,6 +20,7 @@ export async function POST(request: Request) {
     ownerAddress: owner_address,
     erc20Address: erc20_address,
     savingPercent: saving_percent,
+    chainId: chain_id,
   } = res as ICreateAutomationRequest;
 
   // TODO get most recent transaction block and set as last_block_checked
@@ -27,12 +29,16 @@ export async function POST(request: Request) {
     owner_address,
     erc20_address,
     saving_percent,
+    chain_id,
   };
 
-  const { data, error } = await supabase
+  const balance = await fetchLastBalance(createAutomation);
+  createAutomation.last_balance = balance;
+
+  const { data: automation, error } = await supabase
     .from("automations")
     .insert(createAutomation)
     .select();
 
-  return Response.json({ automation: data, error });
+  return Response.json({ automation, error });
 }
