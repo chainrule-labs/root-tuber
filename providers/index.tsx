@@ -1,15 +1,14 @@
-import "../styles/globals.css";
+"use client";
 import "@rainbow-me/rainbowkit/styles.css";
-import type { AppProps } from "next/app";
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider } from "wagmi";
 import { rootstock, rootstockTestnet } from "wagmi/chains";
+import { ReactNode } from "react";
 import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 
 const config = getDefaultConfig({
-	appName: "RainbowKit App",
-	projectId: "YOUR_PROJECT_ID",
+	appName: "Root Tuber",
+	projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID!,
 	chains: [
 		rootstock,
 		...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true"
@@ -21,16 +20,14 @@ const config = getDefaultConfig({
 
 const client = new QueryClient();
 
-function MyApp({ Component, pageProps }: AppProps) {
+function Providers({ children }: { children: ReactNode }) {
 	return (
 		<WagmiProvider config={config}>
 			<QueryClientProvider client={client}>
-				<RainbowKitProvider>
-					<Component {...pageProps} />
-				</RainbowKitProvider>
+				<RainbowKitProvider>{children}</RainbowKitProvider>
 			</QueryClientProvider>
 		</WagmiProvider>
 	);
 }
 
-export default MyApp;
+export default Providers;
