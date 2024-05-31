@@ -1,7 +1,7 @@
 # Root Tuber
 
 - [Demo](https://root-tuber.vercel.app)
-- [Canva](https://www.canva.com/design/DAGGyhXc-mI/x4ZHojDlje4Ey5AQEh2Q6g/edit?utm_content=DAGGyhXc-mI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- [Canva](https://www.canva.com/design/DAGGyhXc-mI/x4ZHojDlje4Ey5AQEh2Q6g/edit)
 
 ## Project details
 
