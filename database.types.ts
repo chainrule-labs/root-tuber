@@ -15,7 +15,7 @@ export type Database = {
           created_at: string
           erc20_address: string
           id: string
-          last_block_checked: number
+          last_balance: string
           owner_address: string
           saving_percent: number
         }
@@ -24,7 +24,7 @@ export type Database = {
           created_at?: string
           erc20_address: string
           id?: string
-          last_block_checked?: number
+          last_balance: string
           owner_address: string
           saving_percent: number
         }
@@ -33,7 +33,7 @@ export type Database = {
           created_at?: string
           erc20_address?: string
           id?: string
-          last_block_checked?: number
+          last_balance?: string
           owner_address?: string
           saving_percent?: number
         }
