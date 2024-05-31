@@ -13,12 +13,14 @@ Like Acorns.com (but crypto), Root Tuber lets users save a little bit of money e
 ### Full description
 
 Root Tuber is built by the [Locker](https://locker.money) team.
-At Locker, we are using 4337 AA with session keys to automate smart accounts with limited permissions.
-But we want to be able to support chains like Rootstock where session keys are not yet supported.
+At Locker, we are building modular smart contract accounts called lockers. These smart accounts are fully programmable and extensible via the installation of modules. Similar to smartphones, where owners can install or uninstall any apps they wish, users can install and uninstall any modules they wish on their locker. Locker leverages the infrastructure of ERC-4337 and session keys to facilitate automation with limited, fine-grained permissions. However, we want to be able to support chains like Rootstock where session keys are not yet supported.
 
 Instead of [session keys](https://docs.zerodev.app/blog/session-keys-are-the-jwts-of-web3),
-Root Tuber uses ERC20 allowances to move funds on the user's behalf.
-Savings are kept in a personal smart account we wrote that locks up funds for a user specified amount of time.
+Root Tuber uses ERC-20 allowances to enable to automatic movement of funds on behalf of users.
+Users' savings are stored in their personal smart accounts, which are smart contracts they own.
+These accounts can be programmed with timelocks to prevent withdrawals until the specified time expires.
+
+As Rootstock evolves and new account abstraction infrastructure becomes available, the Locker team plans to introduce fully programmable smart accounts for Rootstock users.
 
 ### Technical details
 
