@@ -34,7 +34,6 @@ const Approval = ({
 				// gas: BigInt(52993),
 				// type: "legacy",
 			});
-
 			setIsApproved(true);
 		} catch (error) {
 			const acceptableErrorMessages = [

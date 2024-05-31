@@ -4,7 +4,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider } from "wagmi";
 import { rootstock, rootstockTestnet } from "wagmi/chains";
 import { ReactNode } from "react";
-import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import {
+	getDefaultConfig,
+	lightTheme,
+	RainbowKitProvider,
+} from "@rainbow-me/rainbowkit";
 import { http } from "wagmi";
 
 const config = getDefaultConfig({
@@ -26,7 +30,15 @@ function Providers({ children }: { children: ReactNode }) {
 	return (
 		<WagmiProvider config={config}>
 			<QueryClientProvider client={client}>
-				<RainbowKitProvider>{children}</RainbowKitProvider>
+				<RainbowKitProvider
+					theme={lightTheme({
+						accentColor: "#F09637",
+						accentColorForeground: "black",
+						borderRadius: "large",
+					})}
+				>
+					{children}
+				</RainbowKitProvider>
 			</QueryClientProvider>
 		</WagmiProvider>
 	);
