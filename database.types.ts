@@ -11,6 +11,7 @@ export type Database = {
     Tables: {
       automations: {
         Row: {
+          chain_id: number
           created_at: string
           erc20_address: string
           id: string
@@ -19,6 +20,7 @@ export type Database = {
           saving_percent: number
         }
         Insert: {
+          chain_id?: number
           created_at?: string
           erc20_address: string
           id?: string
@@ -27,6 +29,7 @@ export type Database = {
           saving_percent: number
         }
         Update: {
+          chain_id?: number
           created_at?: string
           erc20_address?: string
           id?: string
